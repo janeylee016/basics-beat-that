@@ -18,7 +18,7 @@
       }
 
       #container {
-        background-color: pink;
+        background-color: lavender;
         margin: 40px auto;
         max-width: 800px;
         padding: 38px 31px;
@@ -49,8 +49,22 @@
   </head>
 
   <body>
-    <h1 id="header">Basics: Beat That! 🚀</h1>
+    <h1 id="header">Basics Project 2: Beat That! 🚀</h1>
     <div id="container">
+      <p>Hello! Welcome to Beat That!</p>
+      <p>
+        Enter "1" for normal game mode and enter "2" for lowest combined game
+        mode.
+      </p>
+      <p>
+        Normal Mode: Create a two-digit number by selecting the order of your
+        dice rolls. The player with the highest number wins!
+      </p>
+      <p>
+        Lowest Combined Mode: Roll 2 dices and the player with the smallest
+        number wins!
+      </p>
+      <p>Good luck!</p>
       <p>Input:</p>
       <input id="input-field" />
       <br />
@@ -75,6 +89,17 @@
         // Reset input value
         input.value = "";
       });
+      document
+        .querySelector("#input-field")
+        .addEventListener("keypress", function (event) {
+          // If the user presses the "Enter" key on the keyboard
+          if (event.key === "Enter") {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("submit-button").click();
+          }
+        });
     </script>
   </body>
 </html>
